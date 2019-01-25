@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Add text for donation receipts -->
     <record id="view_event_event_wordpress" model="ir.ui.view">
         <field name="name">event.event.website.compassion.form</field>
         <field name="model">event.event</field>
@@ -65,7 +64,7 @@
                 <field name="communication_id"/>
             </xpath>
             <xpath expr="//field[@name='event_mail_ids']//field[@name='interval_type']" position="after">
-                <field name="stage_id" domain="['|', ('event_type_id', '=', parent.event_type_id), ('event_type_id', '=', False)]" attrs="{'required': [('interval_type', '=', 'after_stage')]}"/>
+                <field name="stage_id" domain="['|', ('event_type_ids', '=', parent.event_type_id), ('event_type_ids', '=', False)]" attrs="{'required': [('interval_type', '=', 'after_stage')]}"/>
             </xpath>
         </field>
     </record>
@@ -77,6 +76,7 @@
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="accepts_registrations"/>
+                <field name="travel_features"/>
             </field>
             <xpath expr="/form/sheet" position="after">
                 <div class="oe_chatter">

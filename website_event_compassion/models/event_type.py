@@ -17,3 +17,6 @@ class EventType(models.Model):
     _name = 'event.type'
 
     accepts_registrations = fields.Boolean(default=True)
+    travel_features = fields.Boolean(
+        help='Use this to activate the travel registration features'
+    )
